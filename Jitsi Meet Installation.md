@@ -115,7 +115,7 @@ Include "conf.d/*.cfg.lua"
 
 # Prosody manual plugin configuration
 
-## Setup issuers and audiences 
+### Setup issuers and audiences 
 
 Open `/etc/prosody/conf.avail/<host>.cfg.lua`
 
@@ -126,7 +126,7 @@ asap_accepted_issuers = { "jitsi", "smash" }
 asap_accepted_audiences = { "jitsi", "smash" }
 ```
 
-Under you domain config change authentication to "token" and provide application ID, secret and optionally token lifetime:
+### Under you domain config change authentication to "token" and provide application ID, secret and optionally token lifetime:
 
 ```
 VirtualHost "jitmeet.example.com"
@@ -135,21 +135,21 @@ VirtualHost "jitmeet.example.com"
     app_secret = "example_app_secret";     -- application secret known only to your token
 ```
 
-To access the data in lib-jitsi-meet you have to enable the prosody module mod_presence_identity in your config.
+### To access the data in lib-jitsi-meet you have to enable the prosody module mod_presence_identity in your config.
 
 ```
 VirtualHost "jitmeet.example.com"
     modules_enabled = { "presence_identity" }
 ```
 
-Enable room name token verification plugin in your MUC component config section:
+### Enable room name token verification plugin in your MUC component config section:
 
 ```
 Component "conference.jitmeet.example.com" "muc"
     modules_enabled = { "token_verification" }
 ```
 
-Setup guest domain
+### Setup guest domain
 ```
 VirtualHost "guest.jitmeet.example.com"
     authentication = "token";
@@ -159,13 +159,24 @@ VirtualHost "guest.jitmeet.example.com"
     allow_empty_token = true;
 ```
 
-Edit jicofo sip-communicator in `/etc/jitsi/jicofo/sip-communicator.properties`
+### Enable guest domain in config.js
+Open your meet config in `/etc/jitsi/meet/<host>-config.js` and enable
+```js
+var config = {
+    hosts: {
+        ... 
+        // When using authentication, domain for guest users.
+        anonymousdomain: 'guest.jitmeet.example.com',
+        ...
+```
+
+### Edit jicofo sip-communicator in `/etc/jitsi/jicofo/sip-communicator.properties`
 ```
 org.jitsi.jicofo.auth.URL=XMPP:jitmeet.example.com
 org.jitsi.jicofo.auth.DISABLE_AUTOLOGIN=true
 ```
 
-Edit jicofo config in `/etc/jitsi/jicofo/config`
+### Edit jicofo config in `/etc/jitsi/jicofo/config`
 SET the follow configs
 ```
 JICOFO_HOST=jitmeet.example.com
