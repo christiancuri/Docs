@@ -74,6 +74,7 @@ ufw allow in openssh &&
 ufw allow in 80/tcp &&
 ufw allow in 443/tcp &&
 ufw allow in 4443/tcp &&
+ufw allow in 5222/tcp &&
 ufw allow in 5347/tcp &&
 ufw allow in 10000:20000/udp
 ```
@@ -168,6 +169,11 @@ var config = {
         // When using authentication, domain for guest users.
         anonymousdomain: 'guest.jitmeet.example.com',
         ...
+    },
+    ...
+    enableUserRolesBasedOnToken: true,
+    ...
+}
 ```
 
 ### Edit jicofo sip-communicator in `/etc/jitsi/jicofo/sip-communicator.properties`
