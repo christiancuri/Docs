@@ -232,3 +232,45 @@ JVB logs
 ```bash
 tail -f -n 350 /var/log/jitsi/jvb.log
 ```
+
+
+
+# Manual react-jitsi-meet
+
+## Install NodeJS
+
+```bash
+curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+```
+
+Clone your repository,
+
+after clone run 
+```bash
+sudo npm i &&
+make
+```
+
+After installation, setup Nginx in `/etc/nginx/sites-available/<host>.conf`
+
+```bash
+server {
+    ...
+    location ^~ /.well-known/acme-challenge/ {
+        root         /app/jitsi-meet;
+    }
+    ....
+}
+
+server {
+    ...
+    root /app/jitsi-meet;
+    ...
+    location ~ ^/(libs|css|static|images|fonts|lang|sounds|connection_optimization|.well-known)/(.*)$
+    {
+        add_header 'Access-Control-Allow-Origin' '*';
+        alias /app/jitsi-meet/$1/$2;
+    }
+    ...
+}
+```
