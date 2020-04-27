@@ -253,7 +253,8 @@ tail -f -n 350 /var/log/jitsi/jvb.log
 ## Install NodeJS
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+curl -sL https://deb.nodesource.com/setup_12.x | sudo bash - &&
+apt-get install nodejs -y
 ```
 
 Clone your repository,
