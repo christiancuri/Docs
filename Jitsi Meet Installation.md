@@ -60,6 +60,19 @@ apt-get install jitsi-meet -y &&
 apt-get install jitsi-meet-tokens -y
 ```
 
+# Generate a Let's Encrypt certificate (optional, recommended)
+In order to have encrypted communications, you need a TLS certificate. The easiest way is to use Let's Encrypt.
+
+Note: Jitsi Meet mobile apps require a valid certificate signed by a trusted Certificate Authority (such as a Let's Encrypt certificate) and will not be able to connect to your server if you choose a self-signed certificate.
+
+Simply run the following in your shell:
+
+```bash
+/usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh
+```
+
+Note that this script uses the HTTP-01 challenge type and thus your instance needs to be accessible from the public internet. If you want to use a different challenge type, don't use this script and instead choose I want to use my own certificate during jitsi-meet installation.
+
 # Open necessary ports
 
 Enable ufw 
