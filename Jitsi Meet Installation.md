@@ -182,15 +182,15 @@ SET the follow configs
 JICOFO_HOST=jitmeet.example.com
 ```
 
-And edit videobridge config in `/etc/jitsi/videobridge/config`
+### And edit videobridge config in `/etc/jitsi/videobridge/config`
 
 Replace 
 ```
-JVB_HOSTNAME=localhost
+JVB_HOST=
 ```
 TO
 ```
-JVB_HOSTNAME=jitmeet.example.com
+JVB_HOST=jitmeet.example.com
 ```
 
 And add after `JAVA_SYS_PROPS`
