@@ -92,15 +92,6 @@ ufw allow in 5347/tcp &&
 ufw allow in 10000:20000/udp
 ```
 
-# Jitsi meet tokens final changes
-
-Open file `/etc/prosody/config.avail/<host>.cfg.lua` and check if first line is `--plugin_paths =`
-and check if config file not updated to authentication = "token", do those edits then run
-```bash
-sed -i 's/module:hook/module:hook_global/g' /usr/share/jitsi-meet/prosody-plugins/mod_auth_token.lua
-```
-
-
 # Config prosody
 
 Open `/etc/prosody/prosody.cfg.lua` and
