@@ -228,7 +228,7 @@ systemctl restart nginx prosody jicofo jitsi-videobridge2
 
 Restart all services
 ```bash
-systemctl restart prosody jicofo jitsi-videobridge2
+systemctl restart prosody jicofo jitsi-videobridge2 jigasi
 ```
 
 Prosody logs
@@ -239,6 +239,11 @@ tail -f -n 350 /var/log/prosody/prosody.log
 Jicofo logs
 ```bash
 tail -f -n 350 /var/log/jitsi/jicofo.log
+```
+
+Jigasi logs
+```bash
+tail -f -n 350 /var/log/jitsi/jigasi.log
 ```
 
 JVB logs
