@@ -14,6 +14,8 @@ After finish, VM will be restarted
 ```bash
 cd &&
 apt-get update -y &&
+apt-get install gcc -y &&
+apt-get install unzip -y &&
 apt-get install lua5.2 -y &&
 apt-get install liblua5.2 -y &&
 apt-get install luarocks -y &&
