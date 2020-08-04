@@ -244,6 +244,11 @@ JVB logs
 tail -f -n 350 /var/log/jitsi/jvb.log
 ```
 
+Register Jibri
+```
+prosodyctl register <USER> auth.<DOMAIN> <PASSWORD>
+```
+
 
 
 # Manual react-jitsi-meet
