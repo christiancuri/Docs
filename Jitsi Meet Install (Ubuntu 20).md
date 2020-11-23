@@ -1,3 +1,7 @@
+# Video installing Jitsi Meet + JWT Authentication using this Doc 
+
+### https://youtu.be/bx6FZAw-NAE
+
 # Install lua and dependencies
 
 Enter in sudo user
