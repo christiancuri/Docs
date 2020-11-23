@@ -1,6 +1,3 @@
-
-
-
 # Install lua and dependencies
 
 Enter in sudo user
