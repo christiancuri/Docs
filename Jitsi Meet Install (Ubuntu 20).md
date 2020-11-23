@@ -17,7 +17,10 @@ apt-get install lua5.2 -y &&
 apt-get install liblua5.2 -y &&
 apt-get install luarocks -y &&
 luarocks install basexx &&
-apt-get install libssl1.0-dev -y &&
+wget -c https://launchpad.net/~rael-gc/+archive/ubuntu/rvm/+files/libssl1.0.0_1.0.2n-1ubuntu5.3_amd64.deb &&
+wget -c https://launchpad.net/~rael-gc/+archive/ubuntu/rvm/+files/libssl1.0-dev_1.0.2n-1ubuntu5.3_amd64.deb &&
+dpkg -i libssl1.0.0_1.0.2n-1ubuntu5.3_amd64.deb &&
+dpkg -i libssl1.0-dev_1.0.2n-1ubuntu5.3_amd64.deb &&
 luarocks install luacrypto &&
 mkdir src &&
 cd src &&
@@ -126,8 +129,8 @@ Open `/etc/prosody/conf.avail/<host>.cfg.lua`
 and add above lines with your issuers and audiences
 
 ```
-asap_accepted_issuers = { "jitsi", "smash" }
-asap_accepted_audiences = { "jitsi", "smash" }
+asap_accepted_issuers = { "jitsi", "zellim" }
+asap_accepted_audiences = { "jitsi", "zellim" }
 ```
 
 ### Under you domain config change authentication to "token" and provide application ID, secret and optionally token lifetime:
