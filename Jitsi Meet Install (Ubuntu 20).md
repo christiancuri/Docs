@@ -211,6 +211,12 @@ JAVA_SYS_PROPS=...
 AUTHBIND=yes
 ```
 
+### Edit hostname on `/etc/hosts`
+Add
+```
+127.0.0.1 jitmeet.example.com
+```
+
 Then, restart all services
 ```bash
 systemctl restart nginx prosody jicofo jitsi-videobridge2
