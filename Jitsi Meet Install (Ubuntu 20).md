@@ -2,6 +2,10 @@
 
 ### https://youtu.be/bx6FZAw-NAE
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=bx6FZAw-NAE
+" target="_blank"><img src="http://img.youtube.com/vi/bx6FZAw-NAE/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
 # Install lua and dependencies
 
 Enter in sudo user
